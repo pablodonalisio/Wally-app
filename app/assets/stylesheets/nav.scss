@@ -1,9 +1,14 @@
 .nav {
-  background-color: rgb(255, 17, 0);
   color: white;
-  height: 80px;
+  background-image: image-url("where-is-waldo.jpeg");
+  background-size: contain;
+  height: 40vw;
+  display: flex;
+  align-items: flex-end;
+
   h1 {
-    text-align: center;
-    font-size: 3rem;
+    font-size: 5vw;
+    margin: 0 50vw 2vw;
+    flex: 1 0 auto;
   }
 }
