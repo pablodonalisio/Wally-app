@@ -11,8 +11,8 @@ Rails.application.config.content_security_policy do |policy|
   policy.object_src  :none
   policy.script_src  :self, :https
   policy.style_src   :self, :https
-  # If you are using webpack-dev-server then specify webpack-dev-server host
-  policy.connect_src :self, :https, "http://localhost:3035", "ws://localhost:3035" if Rails.env.development?
+  # # If you are using webpack-dev-server then specify webpack-dev-server host
+  # policy.connect_src :self, :https, "http://localhost:3035", "ws://localhost:3035" if Rails.env.development?
 
   # Specify URI for violation reports
   # policy.report_uri "/csp-violation-report-endpoint"
@@ -20,6 +20,7 @@ Rails.application.config.content_security_policy do |policy|
   # This fixes rack mini profiler
   policy.script_src_elem :self, :unsafe_inline if Rails.env.development?
   policy.style_src_elem  :self, :unsafe_inline if Rails.env.development?
+  policy.style_src :self, :unsafe_inline if Rails.env.development?
   policy.connect_src *policy.connect_src, :self if Rails.env.development?
 end
 
