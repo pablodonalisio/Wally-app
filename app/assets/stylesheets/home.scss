@@ -1,12 +1,13 @@
 .home {
   background-color: #369cd9;
   color: white;
+  width: 100%;
   .pictures {
     display: flex;
-    width: 100vw;
     flex-wrap: wrap;
     img {
-      width: 50vw;
+      width: 40vw;
+      margin: 4vw;
     }
   }
 }

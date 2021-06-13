@@ -3,12 +3,14 @@
   background-image: image-url("where-is-waldo.jpeg");
   background-size: contain;
   height: 40vw;
+  width: 100%;
   display: flex;
   align-items: flex-end;
 
   h1 {
     font-size: 5vw;
-    margin: 0 50vw 2vw;
+    margin-bottom: 2vw;
+    margin-left: 50vw;
     flex: 1 0 auto;
   }
 }
