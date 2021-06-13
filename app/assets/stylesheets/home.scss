@@ -1,0 +1,12 @@
+.home {
+  background-color: #369cd9;
+  color: white;
+  .pictures {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    img {
+      width: 50vw;
+    }
+  }
+}
