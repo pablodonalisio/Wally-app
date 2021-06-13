@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import React from "react";
 import ReactDOM from "react-dom";
-import Hello from "./hello_react";
+import Routes from "./Routes";
 
 Rails.start();
 Turbolinks.start();
@@ -17,7 +17,7 @@ ActiveStorage.start();
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <Routes name="React" />,
     document.body.appendChild(document.createElement("div"))
   );
 });
