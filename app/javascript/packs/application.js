@@ -6,6 +6,7 @@
 import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
+// eslint-disable-next-line import/no-unresolved
 import "channels";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -17,6 +18,7 @@ ActiveStorage.start();
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
+    // eslint-disable-next-line react/jsx-filename-extension
     <Routes name="React" />,
     document.body.appendChild(document.createElement("div"))
   );
