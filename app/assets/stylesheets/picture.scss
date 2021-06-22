@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     background-color: #369cd9;
-
     a {
       background-color: white;
       color: #369cd9;
@@ -15,20 +14,20 @@
       border-radius: 4px;
     }
   }
-  img {
-    width: 100%;
-  }
-
-  .character-selector {
-    display: flex;
-    flex-direction: column;
-    width: 80px;
-    position:absolute;
-    background-color: white;
-
-    li {
-      padding: 10px;
+  .picture-container {
+    position: relative;
+    img {
+      width: 100%;
     }
-    
+    .character-selector {
+      display: flex;
+      flex-direction: column;
+      width: 80px;
+      position: absolute;
+      background-color: white;
+      li {
+        padding: 10px;
+      }
+    }
   }
 }

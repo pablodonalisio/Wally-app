@@ -38,7 +38,9 @@ const Picture = () => {
       <div className="picture-nav">
         <Link to="/">Home</Link>
       </div>
-      <img src={pictures[pictureId].image} id="game-picture" alt="Wally hidding" />
+      <div className="picture-container">
+        <img src={pictures[pictureId].image} id="game-picture" alt="Wally hidding" />
+      </div>
     </div>
   );
 };
