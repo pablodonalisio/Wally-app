@@ -25,7 +25,9 @@ const Home = () => {
               alt="miniature wally pic"
             />
             <div className="link-container">
-              <Link to={picture.link_url}>PLAY</Link>
+              <Link to={picture.link_url} target="_top">
+                PLAY
+              </Link>
             </div>
           </figure>
         ))}
