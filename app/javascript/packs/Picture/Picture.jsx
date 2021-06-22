@@ -13,7 +13,17 @@ const Picture = () => {
     3: { image: Wally4, characters: ["Wally", "Wenda", "Odlaw"] },
   }
   const { pictureId } = useParams();
-
+  const positionSelector = (e, image, selector) => {
+    const maxWidth = image.width - selector.offsetWidth
+    const maxHeight = image.height - selector.offsetHeight
+    const leftOffset = (e.offsetX > maxWidth)
+      ? `${e.offsetX - selector.offsetWidth}px` // avoid overflow
+      : `${e.offsetX}px`
+    const topOffset = (e.offsetY > maxHeight)
+      ? `${e.offsetY - selector.offsetHeight}px` // avoid overflow
+      : `${e.offsetY}px`
+    return [leftOffset, topOffset]
+  }
   const displaySelection = (e) => {
     const ul = document.createElement("ul")
     ul.classList.add("character-selector")
@@ -23,8 +33,9 @@ const Picture = () => {
       ul.appendChild(li)
     })
     document.getElementsByClassName('picture-container')[0].appendChild(ul)
-    ul.style.top = `${e.offsetY}px`
-    ul.style.left = `${e.offsetX}px`
+    const [leftOffset, topOffset] = positionSelector(e, e.target, ul)
+    ul.style.top = topOffset
+    ul.style.left = leftOffset
     setTimeout(() => {
       document.addEventListener('click', () => ul.remove())
     }, 100);
