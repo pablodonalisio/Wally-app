@@ -22,9 +22,9 @@ const Picture = () => {
       li.textContent = character
       ul.appendChild(li)
     })
-    document.getElementsByClassName('picture')[0].appendChild(ul)
-    ul.style.top = `${e.clientY}px`
-    ul.style.left = `${e.clientX}px`
+    document.getElementsByClassName('picture-container')[0].appendChild(ul)
+    ul.style.top = `${e.offsetY}px`
+    ul.style.left = `${e.offsetX}px`
     setTimeout(() => {
       document.addEventListener('click', () => ul.remove())
     }, 100);
