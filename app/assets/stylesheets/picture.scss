@@ -1,5 +1,34 @@
 .picture {
+  .picture-nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: #369cd9;
+
+    a {
+      background-color: white;
+      color: #369cd9;
+      font-size: 1.5rem;
+      text-decoration: none;
+      margin: 10px;
+      padding: 5px;
+      border-radius: 4px;
+    }
+  }
   img {
     width: 100%;
+  }
+
+  .character-selector {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    position:absolute;
+    background-color: white;
+
+    li {
+      padding: 10px;
+    }
+    
   }
 }
