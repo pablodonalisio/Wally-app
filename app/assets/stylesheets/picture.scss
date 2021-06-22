@@ -1,6 +1,9 @@
 .picture {
+  min-width: 100%;
+  width: 1200px;
   .picture-nav {
     height: 80px;
+    width: 100%;
     display: flex;
     align-items: center;
     background-color: #369cd9;
