@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_193328) do
+ActiveRecord::Schema.define(version: 2021_06_22_225209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "coordinate_pairs", force: :cascade do |t|
+    t.string "x"
+    t.string "y"
+    t.bigint "picture_id", null: false
+    t.bigint "character_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_coordinate_pairs_on_character_id"
+    t.index ["picture_id"], name: "index_coordinate_pairs_on_picture_id"
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.string "url"
@@ -21,4 +38,6 @@ ActiveRecord::Schema.define(version: 2021_06_13_193328) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "coordinate_pairs", "characters"
+  add_foreign_key "coordinate_pairs", "pictures"
 end
