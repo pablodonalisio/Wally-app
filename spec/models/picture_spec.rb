@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Picture, type: :model do
-  it "must have a url" do
-    picture = Picture.create({url: ""})
-    expect(picture.errors).not_to be_empty 
-  end
+  describe 'validations' do
+    it 'is valid with valid attributes' do
+      picture = Picture.create({ url: 'assets/images/test.jpg' })
+      expect(picture).to be_valid
+    end
 
-  it "creates a picture record" do
-    picture = Picture.create({url: "assets/images/test.jpg"})
-    expect(picture.url).to eq("assets/images/test.jpg")
+    it { should validate_presence_of(:url) }
   end
 end
