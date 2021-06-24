@@ -1,3 +1,3 @@
 class Picture < ApplicationRecord
-  validates :url, presence: true
+  validates_presence_of :url
 end
