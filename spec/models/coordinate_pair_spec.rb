@@ -21,4 +21,9 @@ RSpec.describe CoordinatePair, type: :model do
     it { should validate_presence_of(:picture_id) }
     it { should validate_presence_of(:character_id) }
   end
+
+  describe 'associations' do
+    it { should belong_to(:picture) }
+    it { should belong_to(:character) }
+  end
 end
