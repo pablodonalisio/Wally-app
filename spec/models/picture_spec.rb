@@ -19,4 +19,9 @@ RSpec.describe Picture, type: :model do
       expect(subject.image).to be_attached
     end
   end
+
+  describe 'associations' do
+    it { should have_many(:coordinate_pairs) }
+    it { should have_many(:characters) }
+  end
 end
