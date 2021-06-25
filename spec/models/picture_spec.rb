@@ -9,4 +9,14 @@ RSpec.describe Picture, type: :model do
 
     it { should validate_presence_of(:url) }
   end
+
+  describe 'Attachment' do
+    it 'is valid  ' do
+      subject.image.attach(
+        io: File.open(Rails.root.join('app', 'assets', 'images', 'pictures', 'wally1.jpg')),
+        filename: 'attachment.jpg', content_type: 'image/jpg'
+      )
+      expect(subject.image).to be_attached
+    end
+  end
 end
