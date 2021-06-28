@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'home#index'
-  get '/*path' => 'home#index'
+  resources :pictures, only: %i[index show]
 end
